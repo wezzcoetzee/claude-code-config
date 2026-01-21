@@ -11,12 +11,9 @@ Fetch and install these files to ~/.claude/:
 
 **Skills** (model-invoked capabilities):
 
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/frontend-design/SKILL.md> → ~/.claude/skills/frontend-design/SKILL.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/frontend-design/LICENSE.txt> → ~/.claude/skills/frontend-design/LICENSE.txt
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/SKILL.md> → ~/.claude/skills/planning-with-files/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/examples.md> → ~/.claude/skills/planning-with-files/examples.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/reference.md> → ~/.claude/skills/planning-with-files/reference.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/prd-creator/SKILL.md> → ~/.claude/skills/prd-creator/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/react-useeffect/SKILL.md> → ~/.claude/skills/react-useeffect/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/react-useeffect/alternatives.md> → ~/.claude/skills/react-useeffect/alternatives.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/react-useeffect/anti-patterns.md> → ~/.claude/skills/react-useeffect/anti-patterns.md

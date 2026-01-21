@@ -87,6 +87,12 @@ Scripts triggered by Claude Code events.
 
 Personal global instructions loaded into every session.
 
+### Skills with Installations
+
+```base
+npx add-skill vercel-labs/agent-skills
+```
+
 ## Recommended Plugins
 
 Plugins I use alongside this config. Install via CLI:
@@ -108,4 +114,9 @@ Add the marketplace first, then install:
 ```bash
 claude plugin marketplace add jarrodwatts/claude-hud
 claude plugin install claude-hud@claude-hud
+
+claude plugin marketplace add expo/skills
+claude plugin install expo-app-design
+claude plugin install upgrading-expo
+claude plugin install expo-deployment
 ```
