@@ -52,6 +52,23 @@ Model-invoked capabilities Claude applies automatically.
 | `seo-optimizer` | SEO optimization for HTML/CSS websites |
 | `xlsx` | Spreadsheet creation, editing, and analysis |
 
+```bash
+npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
+npx skills add https://github.com/softaworks/agent-toolkit --skill agent-md-refactor
+```
+
+On my list to try a bunch of these
+
+```bash
+npx add-skill coreyhaines31/marketingskills
+```
+
+#### Great website for finding new skills
+
+```bash
+https://skills.sh
+```
+
 ### Agents (`.claude/agents/`)
 
 Custom subagents for specialized tasks.
@@ -119,4 +136,7 @@ claude plugin marketplace add expo/skills
 claude plugin install expo-app-design
 claude plugin install upgrading-expo
 claude plugin install expo-deployment
+
+/plugin marketplace add supabase/agent-skills
+/plugin install postgres-best-practices@supabase-agent-skills
 ```
