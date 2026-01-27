@@ -77,6 +77,7 @@ Custom subagents for specialized tasks.
 |-------|-------------|
 | `clean-code-engineer` | Implement code following clean code principles |
 | `codebase-search` | Find files and implementations |
+| `crypto-trading-engineer` | DEX/perps trading, Hyperliquid, Solana, EVM |
 | `media-interpreter` | Extract info from PDFs/images |
 | `open-source-librarian` | Research OSS with citations |
 | `tech-docs-writer` | Create technical documentation |

@@ -33,6 +33,7 @@ Fetch and install these files to ~/.claude/:
 
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/clean-code-engineer.md> → ~/.claude/agents/clean-code-engineer.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/codebase-search.md> → ~/.claude/agents/codebase-search.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/crypto-trading-engineer.md> → ~/.claude/agents/crypto-trading-engineer.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/media-interpreter.md> → ~/.claude/agents/media-interpreter.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/open-source-librarian.md> → ~/.claude/agents/open-source-librarian.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/tech-docs-writer.md> → ~/.claude/agents/tech-docs-writer.md
