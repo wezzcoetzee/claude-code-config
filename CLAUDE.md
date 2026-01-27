@@ -26,6 +26,7 @@ Senior staff engineer. Ship clean code. No AI slop.
 |-------|---------|
 | `clean-code-engineer` | Feature implementation, refactoring, clean code |
 | `codebase-search` | Find patterns, structure, cross-module exploration |
+| `crypto-trading-engineer` | DEX/perps trading, Hyperliquid, Solana, EVM wallets |
 | `media-interpreter` | Extract info from PDFs, images, diagrams, screenshots |
 | `open-source-librarian` | External docs, OSS examples, library best practices |
 | `tech-docs-writer` | README, API docs, technical guides |
@@ -43,3 +44,4 @@ Available: `vercel-react-best-practices`, `web-design-guidelines`, `react-useeff
   - `bun install`, `bun run`, `bunx`
 - **Framework**: Next.js (App Router)
 - **Components**: ShadCN (`bunx --bun shadcn@latest add [component]`)
+- **SQL ORM**: Prisma
