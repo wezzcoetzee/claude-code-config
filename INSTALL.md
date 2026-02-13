@@ -53,6 +53,20 @@ Fetch and install these files to ~/.claude/:
 
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/CLAUDE.md> → ~/.claude/CLAUDE.md
 
+**Third-Party Skills** (installed via npx):
+
+After installing the config files above, run these commands to install third-party skills:
+
+```bash
+npx skills add https://github.com/anthropics/skills --skill frontend-design
+npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
+npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
+npx skills add https://github.com/vercel-labs/skills --skill find-skills
+npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
+npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
+npx skills add https://github.com/softaworks/agent-toolkit --skill agent-md-refactor
+```
+
 **CRITICAL: Do NOT overwrite existing files.**
 
 Before installing each file:

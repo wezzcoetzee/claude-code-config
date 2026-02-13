@@ -43,30 +43,38 @@ Path-scoped instructions loaded automatically when working with matching files.
 
 Model-invoked capabilities Claude applies automatically.
 
+#### Bundled Skills
+
 | Skill | Description |
 |-------|-------------|
-| `frontend-design` | Create distinctive, production-grade frontend interfaces |
 | `planning-with-files` | Manus-style persistent markdown planning |
 | `prd-creator` | Generate Product Requirements Documents |
 | `react-useeffect` | React useEffect best practices from official docs |
 | `seo-optimizer` | SEO optimization for HTML/CSS websites |
 | `xlsx` | Spreadsheet creation, editing, and analysis |
 
+#### Third-Party Skills
+
+Installed via `npx skills add`. Browse more at [skills.sh](https://skills.sh).
+
+| Skill | Source | Link |
+|-------|--------|------|
+| `frontend-design` | [anthropics/skills](https://github.com/anthropics/skills) | [skills.sh](https://skills.sh/anthropics/skills/frontend-design) |
+| `web-design-guidelines` | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | [skills.sh](https://skills.sh/vercel-labs/agent-skills/web-design-guidelines) |
+| `vercel-react-best-practices` | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) |
+| `find-skills` | [vercel-labs/skills](https://github.com/vercel-labs/skills) | [skills.sh](https://skills.sh/vercel-labs/skills/find-skills) |
+| `agent-browser` | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | [skills.sh](https://skills.sh/vercel-labs/agent-browser/agent-browser) |
+| `seo-audit` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | — |
+| `agent-md-refactor` | [softaworks/agent-toolkit](https://github.com/softaworks/agent-toolkit) | — |
+
 ```bash
+npx skills add https://github.com/anthropics/skills --skill frontend-design
+npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
+npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
+npx skills add https://github.com/vercel-labs/skills --skill find-skills
+npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
 npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
 npx skills add https://github.com/softaworks/agent-toolkit --skill agent-md-refactor
-```
-
-On my list to try a bunch of these
-
-```bash
-npx add-skill coreyhaines31/marketingskills
-```
-
-#### Great website for finding new skills
-
-```bash
-https://skills.sh
 ```
 
 ### Agents (`.claude/agents/`)
@@ -104,12 +112,6 @@ Scripts triggered by Claude Code events.
 ### CLAUDE.md
 
 Personal global instructions loaded into every session.
-
-### Skills with Installations
-
-```base
-npx add-skill vercel-labs/agent-skills
-```
 
 ## Recommended Plugins
 
