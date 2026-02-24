@@ -52,6 +52,7 @@ Model-invoked capabilities Claude applies automatically.
 | `react-useeffect` | React useEffect best practices from official docs |
 | `seo-optimizer` | SEO optimization for HTML/CSS websites |
 | `xlsx` | Spreadsheet creation, editing, and analysis |
+| `project-docs` | Generate AI-friendly project architecture documentation |
 
 #### Third-Party Skills
 
