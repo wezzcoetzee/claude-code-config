@@ -59,8 +59,8 @@ Output the audit as a checklist the user can act on.
 
 ```
 AGENTS.md                    ← Agent roles, capabilities, and boundaries
+ARCHITECTURE.md              ← System-level technical architecture
 docs/
-├── ARCHITECTURE.md          ← System-level technical architecture
 ├── design-docs/
 │   ├── index.md             ← Index of all design docs with status
 │   ├── core-beliefs.md      ← Foundational design principles
