@@ -59,8 +59,8 @@ Output the audit as a checklist the user can act on.
 
 ```
 AGENTS.md                    ← Agent roles, capabilities, and boundaries
-ARCHITECTURE.md              ← System-level technical architecture
 docs/
+├── ARCHITECTURE.md          ← System-level technical architecture
 ├── design-docs/
 │   ├── index.md             ← Index of all design docs with status
 │   ├── core-beliefs.md      ← Foundational design principles
@@ -121,6 +121,18 @@ Some documentation can be auto-generated from the codebase. When scaffolding, ch
 - API docs — Generate from OpenAPI specs, route definitions, or docstrings
 
 Mark generated docs clearly at the top: `<!-- GENERATED — Do not edit manually. Regenerate with [command/instructions]. -->`
+
+---
+
+## CLAUDE.md migration
+
+If the project has an existing `CLAUDE.md`, clear its contents and replace them with a single reference to the newly created `AGENTS.md`:
+
+```md
+See [AGENTS.md](AGENTS.md)
+```
+
+This consolidates all agent instructions into one canonical location and prevents drift between competing instruction files.
 
 ---
 
