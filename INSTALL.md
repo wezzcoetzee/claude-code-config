@@ -28,6 +28,7 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/SKILL.md> → ~/.claude/skills/xlsx/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/LICENSE.txt> → ~/.claude/skills/xlsx/LICENSE.txt
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/recalc.py> → ~/.claude/skills/xlsx/recalc.py
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/prisma/SKILL.md> → ~/.claude/skills/prisma/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/SKILL.md> → ~/.claude/skills/project-docs/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/references/templates.md> → ~/.claude/skills/project-docs/references/templates.md
 

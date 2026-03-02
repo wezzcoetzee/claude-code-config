@@ -36,7 +36,7 @@ Fire agents in background, in parallel. Don't wait synchronously.
 
 ## Skills
 
-Available: `vercel-react-best-practices`, `web-design-guidelines`, `react-useeffect`, `remotion-best-practices`, `seo-audit`, `seo-optimizer`, `supabase-postgres-best-practices`
+Available: `vercel-react-best-practices`, `web-design-guidelines`, `react-useeffect`, `remotion-best-practices`, `seo-audit`, `seo-optimizer`, `supabase-postgres-best-practices`, `prisma`
 
 ## Global Tooling
 
