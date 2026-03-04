@@ -31,6 +31,7 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/prisma/SKILL.md> → ~/.claude/skills/prisma/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/SKILL.md> → ~/.claude/skills/project-docs/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/references/templates.md> → ~/.claude/skills/project-docs/references/templates.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/clean-code-audit/SKILL.md> → ~/.claude/skills/clean-code-audit/SKILL.md
 
 **Agents** (custom subagents):
 

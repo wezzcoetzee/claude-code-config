@@ -54,6 +54,7 @@ Model-invoked capabilities Claude applies automatically.
 | `xlsx` | Spreadsheet creation, editing, and analysis |
 | `prisma` | Prisma v7 setup with pg driver adapter for Next.js + Bun |
 | `project-docs` | Generate AI-friendly project architecture documentation |
+| `clean-code-audit` | Audit code for clean code, security, performance, a11y, testing gaps |
 
 #### Third-Party Skills
 
