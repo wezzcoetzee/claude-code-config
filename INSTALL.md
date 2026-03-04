@@ -42,6 +42,7 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/open-source-librarian.md> → ~/.claude/agents/open-source-librarian.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/tech-docs-writer.md> → ~/.claude/agents/tech-docs-writer.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/test-architect.md> → ~/.claude/agents/test-architect.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/bug-buster.md> → ~/.claude/agents/bug-buster.md
 
 **Commands** (slash commands):
 

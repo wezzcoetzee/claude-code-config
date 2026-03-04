@@ -48,7 +48,6 @@ Model-invoked capabilities Claude applies automatically.
 | Skill | Description |
 |-------|-------------|
 | `planning-with-files` | Manus-style persistent markdown planning |
-| `prd-creator` | Generate Product Requirements Documents |
 | `react-useeffect` | React useEffect best practices from official docs |
 | `seo-optimizer` | SEO optimization for HTML/CSS websites |
 | `xlsx` | Spreadsheet creation, editing, and analysis |
@@ -93,6 +92,7 @@ Custom subagents for specialized tasks.
 | `open-source-librarian` | Research OSS with citations |
 | `tech-docs-writer` | Create technical documentation |
 | `test-architect` | Comprehensive test coverage |
+| `bug-buster` | Test-driven bug fixing with reproduction tests |
 
 ### Commands (`.claude/commands/`)
 
@@ -128,6 +128,8 @@ claude plugin install code-review
 claude plugin install typescript-lsp
 claude plugin install plugin-dev
 claude plugin install ralph-loop
+claude plugin install code-review@claude-plugins-official
+claude plugin install skill-creator@claude-plugins-official
 ```
 
 ### claude-hud (status line)
