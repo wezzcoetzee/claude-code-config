@@ -132,14 +132,9 @@ claude plugin install code-review@claude-plugins-official
 claude plugin install skill-creator@claude-plugins-official
 ```
 
-### claude-hud (status line)
-
-Add the marketplace first, then install:
+### Other Skills
 
 ```bash
-claude plugin marketplace add jarrodwatts/claude-hud
-claude plugin install claude-hud@claude-hud
-
 claude plugin marketplace add expo/skills
 claude plugin install expo-app-design
 claude plugin install upgrading-expo
@@ -147,4 +142,13 @@ claude plugin install expo-deployment
 
 /plugin marketplace add supabase/agent-skills
 /plugin install postgres-best-practices@supabase-agent-skills
+```
+
+### claude-hud (status line)
+
+Add the marketplace first, then install:
+
+```bash
+claude plugin marketplace add jarrodwatts/claude-hud
+claude plugin install claude-hud@claude-hud
 ```
