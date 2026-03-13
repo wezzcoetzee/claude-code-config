@@ -75,7 +75,7 @@ npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-gu
 npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
 npx skills add https://github.com/vercel-labs/skills --skill find-skills
 npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
-npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
+npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit # There are more great skills in this library
 npx skills add https://github.com/softaworks/agent-toolkit --skill agent-md-refactor
 ```
 
@@ -128,18 +128,12 @@ claude plugin install code-review
 claude plugin install typescript-lsp
 claude plugin install plugin-dev
 claude plugin install ralph-loop
-claude plugin install code-review@claude-plugins-official
-claude plugin install skill-creator@claude-plugins-official
+claude plugin install skill-creator
 ```
 
-### Other Skills
+### Postgress
 
 ```bash
-claude plugin marketplace add expo/skills
-claude plugin install expo-app-design
-claude plugin install upgrading-expo
-claude plugin install expo-deployment
-
 /plugin marketplace add supabase/agent-skills
 /plugin install postgres-best-practices@supabase-agent-skills
 ```
