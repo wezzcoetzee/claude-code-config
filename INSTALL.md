@@ -14,17 +14,6 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/SKILL.md> → ~/.claude/skills/planning-with-files/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/examples.md> → ~/.claude/skills/planning-with-files/examples.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/reference.md> → ~/.claude/skills/planning-with-files/reference.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/react-useeffect/SKILL.md> → ~/.claude/skills/react-useeffect/SKILL.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/react-useeffect/alternatives.md> → ~/.claude/skills/react-useeffect/alternatives.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/react-useeffect/anti-patterns.md> → ~/.claude/skills/react-useeffect/anti-patterns.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/SKILL.md> → ~/.claude/skills/seo-optimizer/SKILL.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/index.js> → ~/.claude/skills/seo-optimizer/index.js
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/package.json> → ~/.claude/skills/seo-optimizer/package.json
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/assets/robots.txt> → ~/.claude/skills/seo-optimizer/assets/robots.txt
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/scripts/seo_analyzer.py> → ~/.claude/skills/seo-optimizer/scripts/seo_analyzer.py
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/scripts/generate_sitemap.py> → ~/.claude/skills/seo-optimizer/scripts/generate_sitemap.py
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/references/schema_markup_guide.md> → ~/.claude/skills/seo-optimizer/references/schema_markup_guide.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/seo-optimizer/references/seo_checklist.md> → ~/.claude/skills/seo-optimizer/references/seo_checklist.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/SKILL.md> → ~/.claude/skills/xlsx/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/LICENSE.txt> → ~/.claude/skills/xlsx/LICENSE.txt
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/recalc.py> → ~/.claude/skills/xlsx/recalc.py
@@ -63,13 +52,10 @@ Fetch and install these files to ~/.claude/:
 After installing the config files above, run these commands to install third-party skills:
 
 ```bash
-npx skills add https://github.com/anthropics/skills --skill frontend-design
-npx skills add https://github.com/vercel-labs/agent-skills --skill web-design-guidelines
 npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
 npx skills add https://github.com/vercel-labs/skills --skill find-skills
 npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
 npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
-npx skills add https://github.com/softaworks/agent-toolkit --skill agent-md-refactor
 ```
 
 **CRITICAL: Do NOT overwrite existing files.**
