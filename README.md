@@ -115,7 +115,6 @@ Plugins I use alongside this config. Install via CLI:
 ### Official Plugins
 
 ```bash
-claude plugin install frontend-design
 claude plugin install code-review
 claude plugin install typescript-lsp
 claude plugin install plugin-dev

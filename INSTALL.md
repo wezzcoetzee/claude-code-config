@@ -58,6 +58,17 @@ npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browse
 npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit
 ```
 
+**Plugins** (installed via CLI):
+
+```bash
+claude plugin install code-review
+claude plugin install typescript-lsp
+claude plugin install plugin-dev
+claude plugin install skill-creator
+claude plugin marketplace add jarrodwatts/claude-hud
+claude plugin install claude-hud@claude-hud
+```
+
 **CRITICAL: Do NOT overwrite existing files.**
 
 Before installing each file:
