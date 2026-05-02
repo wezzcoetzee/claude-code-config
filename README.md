@@ -52,6 +52,8 @@ Model-invoked capabilities Claude applies automatically.
 | `prisma` | Prisma v7 setup with pg driver adapter for Next.js + Bun |
 | `project-docs` | Generate AI-friendly project architecture documentation |
 | `clean-code-audit` | Audit code for clean code, security, performance, a11y, testing gaps |
+| `audit-and-file-issues` | Audit repo and file findings as categorized GitHub issues |
+| `bug-hunt` | Defect-focused review for logic flaws, races, leaks, vulnerabilities |
 
 #### Third-Party Skills
 

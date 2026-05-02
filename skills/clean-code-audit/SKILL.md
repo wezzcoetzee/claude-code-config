@@ -15,11 +15,18 @@ If the user specifies files or directories, audit those. Otherwise, audit change
 
 ### 1. Clean Code
 - Naming: vague names, inconsistent conventions, misleading identifiers
-- Function size: functions doing too much, violating single responsibility
-- SOLID violations, DRY violations, unnecessary abstractions
+- Function size: small, single-purpose, max ~3 params; flag functions doing too much
+- File size: flag files past ~200-300 lines or mixing multiple concerns — should be split into smaller, focused, easier-to-test files
+- Readability: a reader should be able to open a file and understand it without being overwhelmed
+- SOLID violations, DRY violations, unnecessary abstractions (don't over-abstract either)
+- KISS violations: over-engineered solutions; YAGNI violations: code built for hypothetical future needs
 - Dead code, commented-out code, unused imports/variables
 - Abstraction level mixing within functions
-- KISS violations: over-engineered solutions
+- Comments explaining WHAT instead of WHY (refactor for clarity instead)
+- Type escape hatches: `as any`, `@ts-ignore`, empty catch blocks
+- API endpoints with embedded business logic that should be extracted into testable services
+- Simplification opportunities: nested conditionals that can flatten, loops that can become declarative (map/filter/reduce), redundant state, branches that collapse into one path
+- Design pattern opportunities: replace sprawling switch/if-else dispatch with Strategy/polymorphism, complex object construction with Builder/Factory, tight coupling with Dependency Injection, repeated traversal with Iterator/Visitor, event fan-out with Observer/Pub-Sub, expensive recomputation with Memoization, conditional behavior toggling with State pattern. Only suggest a pattern when it concretely reduces complexity — never apply patterns for their own sake
 
 ### 2. Security
 - OWASP top 10: injection (SQL, command, XSS), CSRF, broken auth

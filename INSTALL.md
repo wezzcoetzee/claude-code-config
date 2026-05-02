@@ -21,6 +21,10 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/SKILL.md> → ~/.claude/skills/project-docs/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/references/templates.md> → ~/.claude/skills/project-docs/references/templates.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/clean-code-audit/SKILL.md> → ~/.claude/skills/clean-code-audit/SKILL.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/audit-and-file-issues/SKILL.md> → ~/.claude/skills/audit-and-file-issues/SKILL.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/audit-and-file-issues/references/audit-rubric.md> → ~/.claude/skills/audit-and-file-issues/references/audit-rubric.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/audit-and-file-issues/references/issue-template.md> → ~/.claude/skills/audit-and-file-issues/references/issue-template.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/bug-hunt/SKILL.md> → ~/.claude/skills/bug-hunt/SKILL.md
 
 **Agents** (custom subagents):
 
