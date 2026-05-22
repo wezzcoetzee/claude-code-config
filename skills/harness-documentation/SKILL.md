@@ -1,16 +1,18 @@
 ---
-name: project-docs
+name: harness-documentation
 description: >
-  Generate and maintain AI-friendly project architecture documentation. Use this skill whenever the user asks to
-  scaffold project docs, create an ARCHITECTURE.md, AGENTS.md, design docs, execution plans, product specs, or
-  any kind of structured project documentation meant to give an AI (or human) full context on a codebase.
-  Also trigger when the user asks to audit, update, or regenerate existing project documentation,
-  or when they mention "project docs", "architecture docs", "documentation structure", "document my project",
-  "codebase docs", "AI context docs", or similar. Even if they just say "set up docs" or "I need docs for my
+  Generate and maintain AI-friendly project architecture documentation, complete with Mermaid diagrams for
+  architecture, data flows, sequences, and state. Use this skill whenever the user asks to scaffold project docs,
+  create an ARCHITECTURE.md, AGENTS.md, design docs, execution plans, product specs, or any kind of structured
+  project documentation meant to give an AI (or human) full context on a codebase. The skill scaffolds docs that
+  don't exist yet and updates docs that already do. Also trigger when the user asks to audit, update, regenerate,
+  or add diagrams to existing project documentation, or when they mention "project docs", "architecture docs",
+  "documentation structure", "document my project", "codebase docs", "AI context docs", "architecture diagram",
+  "mermaid diagram", "flow diagram", or similar. Even if they just say "set up docs" or "I need docs for my
   project" — use this skill.
 ---
 
-# Project Documentation Skill
+# Harness Documentation Skill
 
 Create, update, and audit structured project documentation optimized for AI agent consumption. The documentation
 system gives any AI agent (coding, planning, reviewing) full project context with minimal token overhead.
@@ -22,6 +24,13 @@ documentation system uses a layered approach: top-level files provide orientatio
 and every file cross-references related docs so an agent can navigate efficiently.
 
 ## Three modes of operation
+
+Before doing anything, check what already exists. List the docs tree (see below) and compare against
+what's present in the project. This decides which mode applies — and the modes mix freely within a single
+request. A typical "document my project" run scaffolds the files that are missing and updates the ones that
+already exist in the same pass. Never blindly overwrite an existing doc with a fresh template; that destroys
+real content the user wrote. If a file exists, you're in update mode for that file; if it doesn't, you're in
+scaffold mode for it.
 
 ### 1. Scaffold — New project documentation
 
@@ -93,6 +102,37 @@ For the templates and detailed guidance for each file, read `references/template
 
 ---
 
+## Diagrams
+
+Prose describes a system; a diagram lets a reader hold the whole shape in their head at once. Embed
+[Mermaid](https://mermaid.js.org) diagrams directly in the relevant docs — they render natively in GitHub,
+VS Code, and most Markdown viewers, and because they're plain text in a fenced ```` ```mermaid ```` block,
+they diff cleanly and an AI agent can read and update them without a rendering step.
+
+Diagrams must be derived from the actual codebase, not invented. Trace real entry points, real service
+boundaries, real state transitions. A diagram that disagrees with the code is worse than no diagram — it
+actively misleads. When you update a doc and the underlying structure changed, update its diagrams too;
+treat them as part of the prose, not decoration.
+
+Choose the diagram type that fits what you're explaining:
+
+| What you're documenting | Mermaid type | Lives in |
+|-------------------------|--------------|----------|
+| System topology — services, data stores, external deps and how they connect | `flowchart` / `graph` | `ARCHITECTURE.md` → High-level diagram |
+| A request or data path step-by-step across components over time | `sequenceDiagram` | `ARCHITECTURE.md` → Data flow; `docs/product-specs/{feature}.md` → User flow |
+| Lifecycle of a stateful entity (order, job, session) — states and transitions | `stateDiagram-v2` | the design doc or product spec that owns that entity |
+| Database tables and their relationships | `erDiagram` | `docs/generated/db-schema.md` → Relationships diagram |
+| Branching logic in a user or agent workflow | `flowchart` | `docs/product-specs/{feature}.md`; `AGENTS.md` → Inter-agent communication |
+
+Keep each diagram focused on one question. A single mega-diagram of the entire system is unreadable —
+prefer a high-level topology diagram plus targeted per-flow diagrams. Label edges (what flows, what
+triggers the transition) so the diagram stands on its own.
+
+`references/templates.md` contains a ready-to-adapt Mermaid example for each type. Read it before writing
+diagrams.
+
+---
+
 ## Writing principles
 
 These apply to every document in the tree:
@@ -148,6 +188,7 @@ When auditing, evaluate each file against these criteria:
 | Accurate | Do code examples and paths actually exist? |
 | Linked | Are cross-references to related docs present and valid? |
 | Actionable | Could an AI agent use this doc to make correct decisions? |
+| Diagrammed | Do docs that describe topology, flows, state, or the data model include a Mermaid diagram, and does it still match the code? |
 
 ---
 

@@ -50,7 +50,7 @@ Model-invoked capabilities Claude applies automatically.
 | `planning-with-files` | Manus-style persistent markdown planning |
 | `xlsx` | Spreadsheet creation, editing, and analysis |
 | `prisma` | Prisma v7 setup with pg driver adapter for Next.js + Bun |
-| `project-docs` | Generate AI-friendly project architecture documentation |
+| `harness-documentation` | Generate AI-friendly project architecture documentation with Mermaid diagrams |
 | `clean-code-audit` | Audit code for clean code, security, performance, a11y, testing gaps |
 | `audit-and-file-issues` | Audit repo and file findings as categorized GitHub issues |
 | `bug-hunt` | Defect-focused review for logic flaws, races, leaks, vulnerabilities |

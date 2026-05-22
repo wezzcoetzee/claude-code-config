@@ -19,6 +19,7 @@ Read the relevant section before generating or updating any document.
 12. [docs/product-specs/](#docsproduct-specs)
 13. [docs/generated/db-schema.md](#docsgenerateddb-schemamd)
 14. [docs/references/](#docsreferences)
+15. [Mermaid diagram patterns](#mermaid-diagram-patterns)
 
 ---
 
@@ -101,13 +102,20 @@ This is the single most important document — it's the first thing any agent sh
 | Hosting | e.g., Railway | Container deployment |
 
 ## High-level diagram
-Describe the system topology in text or ASCII. Show services, data stores, and communication paths.
+Show the system topology — services, data stores, and communication paths — as a Mermaid `flowchart`.
+Derive it from the real service boundaries in the codebase. See [Mermaid diagram patterns](#mermaid-diagram-patterns)
+for the full set of types and guidance.
 
-Example:
-```
-Client → CDN → Next.js (SSR) → API Gateway → Auth Service
-                                            → Core Service → PostgreSQL
-                                            → Worker Service → Redis (queue)
+```mermaid
+flowchart LR
+    Client[Browser] --> CDN
+    CDN --> Web[Next.js SSR]
+    Web --> GW[API Gateway]
+    GW --> Auth[Auth Service]
+    GW --> Core[Core Service]
+    Core --> DB[(PostgreSQL)]
+    GW --> Worker[Worker Service]
+    Worker --> Redis[(Redis queue)]
 ```
 
 ## Directory structure
@@ -137,6 +145,25 @@ Show the top-level project layout with brief annotations:
 Describe how data moves through the system for the primary use case(s). Be specific:
 "User submits form → POST /api/orders → validated by Pydantic model → written to orders
 table → event emitted to Redis → worker picks up event → sends confirmation email via SendGrid"
+
+For a multi-step path across components, a Mermaid `sequenceDiagram` makes the ordering and the
+participants explicit:
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant API
+    participant DB as PostgreSQL
+    participant Q as Redis
+    participant Worker
+    User->>API: POST /api/orders
+    API->>API: validate payload
+    API->>DB: INSERT order
+    API->>Q: emit order.created
+    API-->>User: 201 Created
+    Q->>Worker: deliver order.created
+    Worker->>User: confirmation email
+```
 
 ## Environment and deployment
 - How environments are structured (dev, staging, prod)
@@ -638,6 +665,20 @@ Step-by-step user interaction:
 3. System responds with {behavior}
 4. ...
 
+For flows with branches (validation failures, conditional paths), a Mermaid `flowchart` reads more
+clearly than prose. For a stateful entity, use a `stateDiagram-v2` to show its lifecycle — see
+[Mermaid diagram patterns](#mermaid-diagram-patterns).
+
+```mermaid
+flowchart TD
+    Start([User opens checkout]) --> Cart{Cart empty?}
+    Cart -->|yes| Empty[Show empty state]
+    Cart -->|no| Pay[Enter payment]
+    Pay --> Valid{Payment valid?}
+    Valid -->|no| Pay
+    Valid -->|yes| Done([Order confirmed])
+```
+
 ## Edge cases
 | Scenario | Expected behavior |
 |----------|-------------------|
@@ -684,7 +725,23 @@ migration files, or by introspecting the database directly.
 (repeat)
 
 ## Relationships diagram
-Text description or ASCII diagram of table relationships.
+A Mermaid `erDiagram` of table relationships, generated from the real schema:
+
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    ORDER ||--|{ ORDER_ITEM : contains
+    PRODUCT ||--o{ ORDER_ITEM : "appears in"
+    USER {
+        uuid id PK
+        string email
+    }
+    ORDER {
+        uuid id PK
+        uuid user_id FK
+        string status
+    }
+```
 
 ## Enums / custom types
 | Type name | Values | Used by |
@@ -712,3 +769,74 @@ Common references to check for:
 - Deployment platform docs (Railway, Vercel, Fly.io, etc.)
 - Package manager docs (uv, pnpm, etc.)
 - Database docs (Prisma, Drizzle, SQLAlchemy, etc.)
+
+---
+
+## Mermaid diagram patterns
+
+Reach for diagrams when a structure is easier to see than to read. Every diagram goes in a fenced
+```` ```mermaid ```` block so it renders in GitHub/VS Code and still diffs as plain text. Derive each one
+from the actual code — trace real boundaries, real transitions — and update it whenever the underlying
+structure changes. Keep each diagram answering one question; split a sprawling diagram into several.
+
+### `flowchart` — topology and branching logic
+Use for system topology (services and data stores) and for branching workflows. `[]` = process,
+`[()]` = data store, `{}` = decision, `([])` = start/end. Label decision edges.
+
+```mermaid
+flowchart TD
+    A([Request]) --> B{Authenticated?}
+    B -->|no| C[401 response]
+    B -->|yes| D[Handler]
+    D --> E[(Database)]
+```
+
+### `sequenceDiagram` — ordered interactions over time
+Use for a request path or message exchange across components. `->>` solid call, `-->>` dashed return.
+
+```mermaid
+sequenceDiagram
+    actor User
+    participant API
+    participant DB
+    User->>API: request
+    API->>DB: query
+    DB-->>API: rows
+    API-->>User: response
+```
+
+### `stateDiagram-v2` — entity lifecycle
+Use for the states a stateful entity moves through (order, job, subscription). Label each transition
+with what triggers it.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Pending
+    Pending --> Paid: payment captured
+    Pending --> Cancelled: timeout
+    Paid --> Shipped: fulfilled
+    Shipped --> [*]
+```
+
+### `erDiagram` — data model
+Use for tables and relationships. Cardinality: `||--o{` = one-to-many, `||--||` = one-to-one,
+`}o--o{` = many-to-many.
+
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    ORDER ||--|{ ORDER_ITEM : contains
+```
+
+### `classDiagram` — module or type structure (optional)
+Use when documenting the relationships between key classes, modules, or domain types.
+
+```mermaid
+classDiagram
+    class OrderService
+    class PaymentGateway
+    OrderService --> PaymentGateway : uses
+```
+
+If a diagram would just restate a short list or a single linear path, prose is better — don't add a
+diagram for its own sake.

@@ -18,8 +18,8 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/LICENSE.txt> → ~/.claude/skills/xlsx/LICENSE.txt
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/recalc.py> → ~/.claude/skills/xlsx/recalc.py
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/prisma/SKILL.md> → ~/.claude/skills/prisma/SKILL.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/SKILL.md> → ~/.claude/skills/project-docs/SKILL.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/project-docs/references/templates.md> → ~/.claude/skills/project-docs/references/templates.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/harness-documentation/SKILL.md> → ~/.claude/skills/harness-documentation/SKILL.md
+- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/harness-documentation/references/templates.md> → ~/.claude/skills/harness-documentation/references/templates.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/clean-code-audit/SKILL.md> → ~/.claude/skills/clean-code-audit/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/audit-and-file-issues/SKILL.md> → ~/.claude/skills/audit-and-file-issues/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/audit-and-file-issues/references/audit-rubric.md> → ~/.claude/skills/audit-and-file-issues/references/audit-rubric.md
