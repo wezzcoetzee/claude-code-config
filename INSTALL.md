@@ -2,18 +2,8 @@ Install Claude Code configuration from <https://github.com/wezzcoetzee/claude-co
 
 Fetch and install these files to ~/.claude/:
 
-**Rules** (path-scoped instructions):
-
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/rules/typescript.md> → ~/.claude/rules/typescript.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/rules/testing.md> → ~/.claude/rules/testing.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/rules/comments.md> → ~/.claude/rules/comments.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/rules/forge.md> → ~/.claude/rules/forge.md
-
 **Skills** (model-invoked capabilities):
 
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/SKILL.md> → ~/.claude/skills/planning-with-files/SKILL.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/examples.md> → ~/.claude/skills/planning-with-files/examples.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/planning-with-files/reference.md> → ~/.claude/skills/planning-with-files/reference.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/SKILL.md> → ~/.claude/skills/xlsx/SKILL.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/LICENSE.txt> → ~/.claude/skills/xlsx/LICENSE.txt
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/skills/xlsx/recalc.py> → ~/.claude/skills/xlsx/recalc.py
@@ -31,21 +21,10 @@ Fetch and install these files to ~/.claude/:
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/clean-code-engineer.md> → ~/.claude/agents/clean-code-engineer.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/codebase-search.md> → ~/.claude/agents/codebase-search.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/crypto-trading-engineer.md> → ~/.claude/agents/crypto-trading-engineer.md
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/media-interpreter.md> → ~/.claude/agents/media-interpreter.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/open-source-librarian.md> → ~/.claude/agents/open-source-librarian.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/tech-docs-writer.md> → ~/.claude/agents/tech-docs-writer.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/test-architect.md> → ~/.claude/agents/test-architect.md
 - <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/agents/bug-buster.md> → ~/.claude/agents/bug-buster.md
-
-**Commands** (slash commands):
-
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/commands/interview.md> → ~/.claude/commands/interview.md
-
-**Hooks** (event-triggered scripts):
-
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/hooks/keyword-detector.py> → ~/.claude/hooks/keyword-detector.py
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/hooks/check-comments.py> → ~/.claude/hooks/check-comments.py
-- <https://raw.githubusercontent.com/wezzcoetzee/claude-code-config/master/hooks/todo-enforcer.sh> → ~/.claude/hooks/todo-enforcer.sh
 
 **Global Instructions**:
 
@@ -86,4 +65,4 @@ Before installing each file:
 
 This is especially important for ~/.claude/CLAUDE.md which contains personal workflow preferences. Never overwrite without explicit user consent.
 
-Create directories as needed, fetch files with curl, and make hook scripts executable.
+Create directories as needed and fetch files with curl.

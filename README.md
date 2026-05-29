@@ -21,23 +21,11 @@ git clone https://github.com/wezzcoetzee/claude-code-config.git ~/.claude
 git clone https://github.com/wezzcoetzee/claude-code-config.git /tmp/claude-config
 
 # Copy what you need
-cp -r /tmp/claude-config/rules/* ~/.claude/rules/
 cp -r /tmp/claude-config/skills/* ~/.claude/skills/
 cp -r /tmp/claude-config/agents/* ~/.claude/agents/
 ```
 
 ## Contents
-
-### Rules (`.claude/rules/`)
-
-Path-scoped instructions loaded automatically when working with matching files.
-
-| File | Scope | Description |
-|------|-------|-------------|
-| `typescript.md` | `**/*.{ts,tsx}` | TypeScript conventions |
-| `testing.md` | `**/*.{test,spec}.ts` | Testing patterns |
-| `comments.md` | All files | Comment policy |
-| `forge.md` | `**/*.sol` | Foundry/ZKsync rules |
 
 ### Skills (`.claude/skills/`)
 
@@ -47,7 +35,6 @@ Model-invoked capabilities Claude applies automatically.
 
 | Skill | Description |
 |-------|-------------|
-| `planning-with-files` | Manus-style persistent markdown planning |
 | `xlsx` | Spreadsheet creation, editing, and analysis |
 | `prisma` | Prisma v7 setup with pg driver adapter for Next.js + Bun |
 | `harness-documentation` | Generate AI-friendly project architecture documentation with Mermaid diagrams |
@@ -82,29 +69,10 @@ Custom subagents for specialized tasks.
 | `clean-code-engineer` | Implement code following clean code principles |
 | `codebase-search` | Find files and implementations |
 | `crypto-trading-engineer` | DEX/perps trading, Hyperliquid, Solana, EVM |
-| `media-interpreter` | Extract info from PDFs/images |
 | `open-source-librarian` | Research OSS with citations |
 | `tech-docs-writer` | Create technical documentation |
 | `test-architect` | Comprehensive test coverage |
 | `bug-buster` | Test-driven bug fixing with reproduction tests |
-
-### Commands (`.claude/commands/`)
-
-Custom slash commands.
-
-| Command | Description |
-|---------|-------------|
-| `interview` | Interactive planning/spec fleshing |
-
-### Hooks (`.claude/hooks/`)
-
-Scripts triggered by Claude Code events.
-
-| Hook | Event | Description |
-|------|-------|-------------|
-| `keyword-detector.py` | UserPromptSubmit | Detects keywords in prompts |
-| `check-comments.py` | PostToolUse (Write/Edit) | Validates comment policy |
-| `todo-enforcer.sh` | Stop | Ensures todos are tracked |
 
 ### CLAUDE.md
 
@@ -117,8 +85,6 @@ Plugins I use alongside this config. Install via CLI:
 ### Official Plugins
 
 ```bash
-claude plugin install code-review
-claude plugin install typescript-lsp
 claude plugin install plugin-dev
 claude plugin install skill-creator
 ```
