@@ -1,6 +1,6 @@
 ---
 name: create-pull-request
-description: Create a GitHub pull request the right way — push the branch, find the repo's PULL_REQUEST_TEMPLATE.md (or fall back to a sensible default), fill it out from the actual diff, and wire up issue-closing keywords so merging the PR closes its linked issue(s). Use this whenever the user asks to "open a PR", "create a pull request", "raise a PR", "submit my changes for review", or finishes a branch and wants it reviewed/merged. Also use when a branch was created from a GitHub issue and the PR should close that issue on merge.
+description: File a concise pull request. Use when the user asks to file, open or create a PR
 ---
 
 # Create Pull Request
@@ -18,12 +18,15 @@ The user has committed work on a branch and wants to open it for review, or asks
 Run these to understand the state of the branch:
 
 ```bash
+gh pr view --json url,state,isDraft 2>/dev/null
 git branch --show-current
 git log --oneline origin/HEAD..HEAD 2>/dev/null || git log --oneline -10
 git diff --stat origin/HEAD...HEAD 2>/dev/null || git diff --stat
 ```
 
-Read the actual diff (`git diff origin/HEAD...HEAD`) so the PR description reflects what truly changed — not a guess. The description should explain *what* changed and *why*, grounded in the commits and diff.
+If a PR already exists for this branch, stop and tell the user — update it rather than opening a duplicate.
+
+Read the actual diff (`git diff origin/HEAD...HEAD`) so the PR description reflects what truly changed — not a guess. The diff tells you *what* changed; the user's original prompt tells you *why it mattered*. You need both.
 
 ### 2. Find the PR template
 
@@ -48,8 +51,17 @@ If none exists, use the default template in `assets/default_template.md`.
 Populate the template honestly from the diff and commits:
 
 - Check the boxes that apply (PR type, testing done). Don't check testing boxes for tests you can't confirm ran — leave them unchecked or note what's still needed.
-- Write the description so a reviewer understands the change without reading every line. Lead with intent.
 - Only claim things the diff supports. An empty section is better than an invented one.
+
+Open the description with a plain statement of the problem, drawn from the user's original prompt, then briefly explain the solution. Never lead with an inventory of what you deleted and renamed — that's the part a reviewer can read from the diff.
+
+BAD
+> ❌ Removed implicit workspace carry-over from every "new thread" entry point (cmd+n, sidebar v1/v2 buttons, command palette). New threads inherit only the project from context. Deleted `buildContextualThreadOptions`, `startNewThreadInProjectFromContext`, and the v1 sidebar's seed-context machinery.
+
+GOOD
+> ✅ Starting a new thread from an existing worktree silently ignored your "new worktree" default and reused the current one. Now new threads always take branch, worktree, and env mode from your configured defaults, and only inherit the project.
+
+Close the body with a short line naming the model and harness that made the change.
 
 ### 4. Link issues so merging closes them
 
@@ -83,7 +95,17 @@ git push -u origin HEAD
 gh pr create --title "<title>" --body-file /tmp/pr_body.md
 ```
 
-Choose a title that matches the repo's convention (check recent PRs with `gh pr list --state all --limit 10` if unsure — e.g. Conventional Commits like `feat(auth): ...`). After creation, show the user the PR URL.
+Open a real PR, never a draft — review bots don't run on drafts.
+
+Titles usually become the squashed commit message, so match the repo's convention (check recent PRs with `gh pr list --state all --limit 10` if unsure — e.g. Conventional Commits like `feat(auth): ...`). Within that convention, name the outcome rather than the mechanism:
+
+BAD
+> ❌ perf(server): negotiate permessage-deflate on the websocket
+
+GOOD
+> ✅ perf(server): cut websocket frame size by 70% with compression
+
+After creation, show the user the PR URL. If they also asked you to watch it, continue with the `babysit-pr` skill.
 
 ## Notes
 

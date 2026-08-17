@@ -4,17 +4,13 @@ My personal Claude Code configuration - mostly not created by me, but sourced fr
 
 ## Installation
 
-### Option 1: Copy-Paste into Claude Code (No Git Required)
-
-Copy the prompt from [INSTALL.md](INSTALL.md) and paste it into Claude Code. Claude will fetch and install all config files automatically.
-
-### Option 2: Git Clone
+### Option 1: Git Clone
 
 ```bash
 git clone https://github.com/wezzcoetzee/claude-code-config.git ~/.claude
 ```
 
-### Option 3: Selective Install
+### Option 2: Selective Install
 
 ```bash
 # Clone elsewhere first
@@ -31,34 +27,17 @@ cp -r /tmp/claude-config/agents/* ~/.claude/agents/
 
 Model-invoked capabilities Claude applies automatically.
 
-#### Bundled Skills
-
 | Skill | Description |
 |-------|-------------|
-| `xlsx` | Spreadsheet creation, editing, and analysis |
-| `prisma` | Prisma v7 setup with pg driver adapter for Next.js + Bun |
-| `harness-documentation` | Generate AI-friendly project architecture documentation with Mermaid diagrams |
-| `clean-code-audit` | Audit code for clean code, security, performance, a11y, testing gaps |
-| `audit-and-file-issues` | Audit repo and file findings as categorized GitHub issues |
+| `app-store-screenshots` | Capture simulator/app screenshots and composite them into framed App Store marketing images |
+| `audit-and-file-issues` | Audit a repo and file each finding as a categorized GitHub issue |
+| `babysit-pr` | Monitor a PR through review and CI, acting on real findings only |
 | `bug-hunt` | Defect-focused review for logic flaws, races, leaks, vulnerabilities |
-
-#### Third-Party Skills
-
-Installed via `npx skills add`. Browse more at [skills.sh](https://skills.sh).
-
-| Skill | Source | Link |
-|-------|--------|------|
-| `vercel-react-best-practices` | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | [skills.sh](https://skills.sh/vercel-labs/agent-skills/vercel-react-best-practices) |
-| `find-skills` | [vercel-labs/skills](https://github.com/vercel-labs/skills) | [skills.sh](https://skills.sh/vercel-labs/skills/find-skills) |
-| `agent-browser` | [vercel-labs/agent-browser](https://github.com/vercel-labs/agent-browser) | [skills.sh](https://skills.sh/vercel-labs/agent-browser/agent-browser) |
-| `seo-audit` | [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills) | — |
-
-```bash
-npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
-npx skills add https://github.com/vercel-labs/skills --skill find-skills
-npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
-npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit # There are more great skills in this library
-```
+| `clean-code-audit` | Audit code for clean code, security, performance, a11y, testing gaps |
+| `create-pull-request` | File a concise pull request from the actual diff |
+| `file-upload` | Upload a file to a file server and return a shareable URL |
+| `harness-documentation` | Generate AI-friendly project architecture documentation with Mermaid diagrams |
+| `html-communication` | Publish plans, reports, and UI mocks as hosted HTML instead of markdown |
 
 ### Agents (`.claude/agents/`)
 
@@ -66,17 +45,29 @@ Custom subagents for specialized tasks.
 
 | Agent | Description |
 |-------|-------------|
+| `bug-buster` | Test-driven bug fixing with reproduction tests |
 | `clean-code-engineer` | Implement code following clean code principles |
 | `codebase-search` | Find files and implementations |
 | `crypto-trading-engineer` | DEX/perps trading, Hyperliquid, Solana, EVM |
 | `open-source-librarian` | Research OSS with citations |
 | `tech-docs-writer` | Create technical documentation |
 | `test-architect` | Comprehensive test coverage |
-| `bug-buster` | Test-driven bug fixing with reproduction tests |
 
-### CLAUDE.md
+### Instructions
 
-Personal global instructions loaded into every session.
+- `CLAUDE.md` - personal global instructions loaded into every Claude Code session.
+- `AGENTS.md` - a symlink to `CLAUDE.md`, for harnesses that read `AGENTS.md` (e.g. Codex).
+
+## Recommended Third-Party Skills
+
+Not checked into this repo. Installed via `npx skills add` - browse more at [skills.sh](https://skills.sh).
+
+```bash
+npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
+npx skills add https://github.com/vercel-labs/skills --skill find-skills
+npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
+npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit # There are more great skills in this library
+```
 
 ## Recommended Plugins
 

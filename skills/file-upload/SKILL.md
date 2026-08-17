@@ -1,0 +1,1 @@
+This skill will upload to a file server and return a URL to the uploaded file. Use this skill when you need to share files with the user or other agents.
