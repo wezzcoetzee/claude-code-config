@@ -61,13 +61,9 @@ Custom subagents for specialized tasks.
 | Agent | Description |
 |-------|-------------|
 | `bug-buster` | Test-driven bug fixing with reproduction tests |
-| `clean-code-engineer` | Implement code following clean code principles |
 | `code-auditor` | Read-only auditor that applies a rubric to one slice of a codebase |
-| `codebase-search` | Find files and implementations |
 | `open-source-librarian` | Research OSS with citations |
 | `review-finder` / `review-shell` / `review-post` | Workers for the `code-review` workflow |
-| `tech-docs-writer` | Create technical documentation |
-| `test-architect` | Comprehensive test coverage |
 
 ### Commands (`.claude/commands/`)
 
