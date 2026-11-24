@@ -1,6 +1,6 @@
 ---
 name: app-store-screenshots
-description: Capture App Store screenshots from iOS simulators or macOS app windows, then composite them into framed marketing images (device bezel, headline, brand gradient) at exact App Store Connect sizes. Use when the user wants App Store screenshots, marketing images, promo shots, or store listing assets for an iOS or macOS app.
+description: Use when the user wants App Store screenshots, marketing images, promo shots, or store listing assets for an iOS or macOS app.
 ---
 
 # App Store Screenshots

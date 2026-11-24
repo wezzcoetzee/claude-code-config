@@ -1,11 +1,11 @@
 ---
 name: bug-hunt
-description: Hunt for bugs and defects in a codebase — logic flaws, race conditions, memory leaks, security vulnerabilities, error-handling gaps, anti-patterns, and bad practices. Use when the user says "find bugs", "hunt bugs", "look for defects", "check for vulnerabilities", "review for bugs", "what could break", "scan for issues", or wants a defect-focused review (distinct from a general code-quality audit).
+description: Use when the user says "find bugs", "hunt bugs", "look for defects", "check for vulnerabilities", "review for bugs", "what could break", "scan for issues", or wants a defect-focused review (distinct from a general code-quality audit).
 ---
 
 # Bug Hunt
 
-Hunt for real defects in a codebase. Produce a severity-ranked report with `file:line` references and concrete fixes. Focus on things that could actually break, corrupt data, leak resources, or get exploited — not style or general quality (use `clean-code-audit` for that).
+Hunt for real defects in a codebase. Produce a severity-ranked report with `file:line` references and concrete fixes. Focus on things that could actually break, corrupt data, leak resources, or get exploited — not style or general quality (use `clean-code` for that).
 
 ## Scope
 
@@ -88,6 +88,7 @@ If the user specifies files or directories, hunt those. Otherwise, hunt the chan
    - **Warning**: real bug under realistic conditions, but bounded blast radius
    - **Suggestion**: latent issue, edge case, or hardening opportunity
 6. Produce the report below
+7. Offer to file the findings as GitHub issues (see below)
 
 ## Output Format
 
@@ -115,11 +116,17 @@ If the user specifies files or directories, hunt those. Otherwise, hunt the chan
 3. [Third priority]
 ```
 
+## Filing the findings
+
+After presenting the report, ask whether the user wants the findings tracked as GitHub issues. If yes, invoke the `file-issues` skill and hand it the findings — title, `file:line`, severity, category, how the bug triggers, and suggested fix for each. That skill owns the label taxonomy, the issue template, and the confirmation checkpoint; don't call `gh issue create` directly from here.
+
+Skip the offer if the user only wanted a read, or if the repo has no GitHub remote.
+
 ## Rules
 
 - Every finding MUST include `file:line` and a concrete fix
 - Every finding MUST describe **how the bug triggers** — what input or sequence of events causes it. If you can't say, it's not a real finding.
 - Skip categories with no findings — don't pad
 - Prefer fewer high-confidence findings over many speculative ones. False positives erode trust.
-- Don't flag style, naming, or general "could be cleaner" — that's `clean-code-audit`'s job
+- Don't flag style, naming, or general "could be cleaner" — that's `clean-code`'s job
 - Prioritize defects with user-visible, security, or data-integrity impact

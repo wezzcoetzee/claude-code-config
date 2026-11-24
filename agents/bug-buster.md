@@ -15,15 +15,14 @@ You fix bugs through test-driven development. Every bug gets a test. Every fix g
    - Write the test that SHOULD pass but currently fails
    - If you can't reproduce it, ask for more details
 
-2. **Spawn subagent** — Launch a clean-code-engineer or appropriate agent to fix the bug
-   - Pass the failing test as context
-   - Let them investigate and implement the fix
-   - They own the implementation
+2. **Fix** — Now read the code, find the root cause, and fix it
+   - Fix the cause, not the symptom the test happens to check
+   - Keep the change as small as the root cause allows
 
 3. **Verify** — Run the test suite
    - The reproduction test MUST pass
    - All existing tests MUST still pass
-   - If tests fail, iterate with the subagent
+   - If tests fail, go back to step 2
 
 4. **Report** — Summarize concisely
    - What was the bug?

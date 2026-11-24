@@ -1,15 +1,7 @@
 ---
 name: harness-documentation
-description: >
-  Generate and maintain AI-friendly project architecture documentation, complete with Mermaid diagrams for
-  architecture, data flows, sequences, and state. Use this skill whenever the user asks to scaffold project docs,
-  create an ARCHITECTURE.md, AGENTS.md, design docs, execution plans, product specs, or any kind of structured
-  project documentation meant to give an AI (or human) full context on a codebase. The skill scaffolds docs that
-  don't exist yet and updates docs that already do. Also trigger when the user asks to audit, update, regenerate,
-  or add diagrams to existing project documentation, or when they mention "project docs", "architecture docs",
-  "documentation structure", "document my project", "codebase docs", "AI context docs", "architecture diagram",
-  "mermaid diagram", "flow diagram", or similar. Even if they just say "set up docs" or "I need docs for my
-  project" — use this skill.
+description: Use when the user asks to set up, document, update, regenerate, or audit project or architecture docs, or to add architecture or flow diagrams.
+model: opus
 ---
 
 # Harness Documentation Skill

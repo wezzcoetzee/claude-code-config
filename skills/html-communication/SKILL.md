@@ -1,10 +1,7 @@
 ---
 name: html-communication
-description: Write plans, reports, comparisons, and UI mocks as hosted HTML documents instead of markdown. Use when producing a plan, design doc, audit report, research summary, or static mocks for review.
-metadata:
-  harness: [claude, codex]
-  platform: [darwin, linux]
-  scope: fleet
+description: Use when producing a plan, design doc, audit report, research summary, or static mocks for review.
+model: sonnet
 ---
 
 # HTML Communication
@@ -24,7 +21,6 @@ Write a single self-contained HTML file to the scratchpad directory. Inline all 
 Then publish and report only the URL. Do not also paste the document into the terminal.
 
 - **Claude:** publish with the Artifact tool, passing the file path and a favicon. Redeploy the same file path to update in place rather than creating a second link.
-- **Codex:** publish with the `file-upload` skill. If no upload target is reachable, report the absolute file path and say it was not published.
 
 ## House style
 
@@ -37,6 +33,7 @@ Every document looks the same so they are recognisable at a glance.
 - Minimal copy; no em dashes
 - No looping CSS animation (pulse, shimmer, blur, spinners) — they peg the GPU on high-refresh displays
 - Wide content (tables, diagrams, code) scrolls inside its own container; the page body never scrolls horizontally
+- When you're done making the plan, launch it in the browser so the user can view it
 
 Prefer real headings, tables, and diagrams over prose. If a section is three sentences of throat-clearing, cut it.
 
