@@ -27,7 +27,7 @@ Some skills lean on each other or on agents: `code-review` needs the three `revi
 
 ## Contents
 
-### Skills (`.claude/skills/`)
+### Skills (`skills/`)
 
 Model-invoked capabilities Claude applies automatically.
 
@@ -44,7 +44,6 @@ Model-invoked capabilities Claude applies automatically.
 | `create-adr` | Write or supersede an Architecture Decision Record |
 | `create-pull-request` | File a concise pull request from the actual diff |
 | `file-issues` | Turn audit findings into labelled, templated GitHub issues |
-| `file-upload` | Upload a file to a file server and return a shareable URL |
 | `fix-up-pr` | Rebase, resolve conflicts and get CI green without merging |
 | `full-send` / `full-stop` | Finish work unattended through to a merged (or merge-ready) PR |
 | `harness-documentation` | Generate AI-friendly project architecture documentation with Mermaid diagrams |
@@ -54,7 +53,7 @@ Model-invoked capabilities Claude applies automatically.
 | `principle-tests` | Every test guards logic that matters; none keeps dead code alive |
 | `worktree-cleanup` | Inventory and prune worktrees left behind by agent runs |
 
-### Agents (`.claude/agents/`)
+### Agents (`agents/`)
 
 Custom subagents for specialized tasks.
 
@@ -65,13 +64,13 @@ Custom subagents for specialized tasks.
 | `open-source-librarian` | Research OSS with citations |
 | `review-finder` / `review-shell` / `review-post` | Workers for the `code-review` workflow |
 
-### Commands (`.claude/commands/`)
+### Commands (`commands/`)
 
 | Command | Description |
 |---------|-------------|
 | `/audit` | Run `clean-code` and `bug-hunt` over a path or diff and file the findings as issues |
 
-### Hooks (`.claude/hooks/`)
+### Hooks (`hooks/`)
 
 | Hook | Event | What it does |
 |------|-------|--------------|
@@ -105,12 +104,12 @@ Hooks need wiring up in `~/.claude/settings.json`. All three fail open if `jq`/`
 Not checked into this repo. Installed via `npx skills add` - browse more at [skills.sh](https://skills.sh).
 
 ```bash
-npx skills add https://github.com/vercel-labs/agent-skills --skill vercel-react-best-practices
 npx skills add https://github.com/vercel-labs/skills --skill find-skills
-npx skills add https://github.com/vercel-labs/agent-browser --skill agent-browser
 npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit # There are more great skills in this library
 npx skills add https://github.com/anthropics/skills --skill frontend-design
 npx skills add https://github.com/Bil0000/Hill-Climb --skill hill-climb
+npx skills add https://github.com/pbakaus/impeccable # Also installs its companion skills (polish, critique, layout, ...)
+npx skills add https://github.com/shadcn/ui --skill shadcn
 ```
 
 ## Recommended Plugins
@@ -120,15 +119,7 @@ Plugins I use alongside this config. Install via CLI:
 ### Official Plugins
 
 ```bash
-claude plugin install plugin-dev
+claude plugin install context7     # Up-to-date library docs over MCP
 claude plugin install skill-creator
-```
-
-### claude-hud (status line)
-
-Add the marketplace first, then install:
-
-```bash
-claude plugin marketplace add jarrodwatts/claude-hud
-claude plugin install claude-hud@claude-hud
+claude plugin install swift-lsp    # Swift language server, for iOS/macOS work
 ```
