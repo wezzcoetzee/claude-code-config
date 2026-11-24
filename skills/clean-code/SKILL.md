@@ -1,6 +1,6 @@
 ---
-name: clean-code-audit
-description: Audit code against clean code principles, security, performance, accessibility, and testing gaps. Use when the user says "audit my code", "review code quality", "code audit", "check my code", or wants a comprehensive code quality assessment.
+name: clean-code
+description: Use when the user says "audit my code", "review code quality", "code audit", "check my code", or wants a comprehensive code quality assessment.
 ---
 
 # Clean Code Audit
@@ -66,6 +66,7 @@ If the user specifies files or directories, audit those. Otherwise, audit change
 3. Analyze each file against all 5 categories
 4. Rank findings by severity: Critical > Warning > Suggestion
 5. Produce the report below
+6. Offer to file the findings as GitHub issues (see below)
 
 ## Output Format
 
@@ -91,6 +92,12 @@ If the user specifies files or directories, audit those. Otherwise, audit change
 2. [Second priority action]
 3. [Third priority action]
 ```
+
+## Filing the findings
+
+After presenting the report, ask whether the user wants the findings tracked as GitHub issues. If yes, invoke the `file-issues` skill and hand it the findings — title, `file:line`, severity, category, why it matters, and suggested fix for each. That skill owns the label taxonomy, the issue template, and the confirmation checkpoint; don't call `gh issue create` directly from here.
+
+Skip the offer if the user only wanted a read, or if the repo has no GitHub remote.
 
 ## Rules
 
