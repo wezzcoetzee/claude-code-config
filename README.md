@@ -23,7 +23,7 @@ cp -r /tmp/claude-config/commands/* ~/.claude/commands/
 cp -r /tmp/claude-config/hooks ~/.claude/hooks
 ```
 
-Some skills lean on each other or on agents: `code-review` needs the three `review-*` agents and Claude Code's Workflow tool, `cleanup` and `/audit` fan out `code-auditor`, `full-send` chains `consult-council`, `create-pull-request` and `babysit-pr`. Copy those together.
+Some skills lean on each other or on agents: `code-review` needs the three `review-*` agents and Claude Code's Workflow tool, `cleanup` and `/audit` fan out `code-auditor`, `full-send` chains `consult-council`, `create-pull-request` and `babysit-pr`, `greenfield` fans out `code-auditor`, and `principle-html-communication` defers to `principle-reports` and `principle-ui`. Copy those together.
 
 ## Contents
 
@@ -46,11 +46,15 @@ Model-invoked capabilities Claude applies automatically.
 | `file-issues` | Turn audit findings into labelled, templated GitHub issues |
 | `fix-up-pr` | Rebase, resolve conflicts and get CI green without merging |
 | `full-send` / `full-stop` | Finish work unattended through to a merged (or merge-ready) PR |
+| `greenfield` | Audit a whole system as if rebuilding it from scratch and report what you would change |
 | `harness-documentation` | Generate AI-friendly project architecture documentation with Mermaid diagrams |
-| `html-communication` | Publish plans, reports, and UI mocks as hosted HTML instead of markdown |
 | `metrics-logging` | Add Prometheus metrics and structured logging |
 | `principle-comments` | Only comment where the code cannot explain itself |
+| `principle-html-communication` | Publish plans, reports, and UI mocks as hosted HTML instead of markdown |
+| `principle-reports` | Reports read as dense black-and-white pages carried by charts and diagrams |
 | `principle-tests` | Every test guards logic that matters; none keeps dead code alive |
+| `principle-ui` | UI and mocks come out colorful, vibrant, and creative |
+| `workflow-subagents-implementation` | Run a plan or staged task list as a fanned-out subagent workflow |
 | `worktree-cleanup` | Inventory and prune worktrees left behind by agent runs |
 
 ### Agents (`agents/`)
@@ -60,6 +64,7 @@ Custom subagents for specialized tasks.
 | Agent | Description |
 |-------|-------------|
 | `bug-buster` | Test-driven bug fixing with reproduction tests |
+| `clean-code-engineer` | Implement features or refactor with strict clean code principles |
 | `code-auditor` | Read-only auditor that applies a rubric to one slice of a codebase |
 | `open-source-librarian` | Research OSS with citations |
 | `review-finder` / `review-shell` / `review-post` | Workers for the `code-review` workflow |
@@ -106,6 +111,7 @@ Not checked into this repo. Installed via `npx skills add` - browse more at [ski
 ```bash
 npx skills add https://github.com/vercel-labs/skills --skill find-skills
 npx skills add https://github.com/coreyhaines31/marketingskills --skill seo-audit # There are more great skills in this library
+npx skills add https://github.com/coreyhaines31/marketingskills --skill ai-seo
 npx skills add https://github.com/anthropics/skills --skill frontend-design
 npx skills add https://github.com/Bil0000/Hill-Climb --skill hill-climb
 npx skills add https://github.com/pbakaus/impeccable # Also installs its companion skills (polish, critique, layout, ...)
